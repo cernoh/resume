@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -33,10 +34,40 @@ export default function Home() {
             Email
           </a>
         </div>
-        <div className="glassmorphism mt-8 p-6">
+        <div className="glassmorphism mt-8 p-6 w-full max-w-4xl">
           <section>
-            <h2 className="text-2xl font-semibold">Projects</h2>
-            <p className="mt-4">Placeholder text for projects section.</p>
+            <h2 className="text-2xl font-semibold mb-6">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Pomoneko.com Project Card */}
+              <div className="border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div className="relative h-48 w-full">
+                  <Image 
+                    src="/pomoneko-screenshot.jpg" 
+                    alt="Pomoneko.com website screenshot" 
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className="transition-opacity hover:opacity-90"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-xl font-semibold">Pomoneko.com</h3>
+                    <a 
+                      href="https://pomoneko.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                    >
+                      Visit <FaExternalLinkAlt size={12} />
+                    </a>
+                  </div>
+                  <p className="text-gray-700">
+                    [A cat themed Pomodoro timer.]
+                  </p>
+                </div>
+              </div>
+              {/* You can add more project cards here */}
+            </div>
           </section>
         </div>
       </main>
